@@ -130,7 +130,7 @@ If COMMENT is non-nil, the node will have a comment heading."
   "Insert an XMind FILE into the current Org buffer."
   (interactive "f")
   (cl-assert (derived-mode-p 'org-mode))
-  (-> (xmind-org-parse-content file)
+  (-> (xmind-org-parse-content (expand-file-name file))
       (xmind-org-root-node)
       (xmind-org-insert-node)))
 
